@@ -13,6 +13,9 @@ app.get("/",function(req,res){
     res.render("home");
 });
 
+app.get("/product", function(req, res){
+    res.render("product");
+})
 
 app.listen(3000,function(){
     console.log("Server is working in port 3000");
