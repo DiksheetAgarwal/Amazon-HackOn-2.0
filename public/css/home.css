@@ -60,3 +60,7 @@ p{
     text-decoration: line-through;
     margin-left: 0.7rem;
 }
+.a_tag{
+    text-decoration: none;
+    color: black;
+}

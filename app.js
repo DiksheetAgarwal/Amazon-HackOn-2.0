@@ -1,21 +1,42 @@
 const express= require("express");
-
+const decor=require(__dirname+"/public/js/decor.js")
+const fashion=require(__dirname+"/public/js/fashion.js")
 const bodyParser=require("body-parser");
+const path=require("path");
 
 
 const app=express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-
+app.use(express.static( path.join(__dirname,'/public')));
+app.use(express.static( path.join(__dirname,'/views')));
+app.set('views',path.join(__dirname,'/views'))
+console.log(path.join(__dirname,"/public"));
 
 app.get("/",function(req,res){
-    res.render("home");
+    res.render("home",{decor:decor,fashion:fashion});
 });
 
-app.get("/product", function(req, res){
-    res.render("product");
-})
+app.get("/fashion_product/:name",function(req,res){
+    const gotName=req.params.name;
+    fashion.forEach(i => {
+        if(i.dev_name===gotName){
+            res.render("fashionPage",{fashionProductDetails:i});
+        }
+    });
+});
+
+app.get("/decor_product/:name",function(req,res){
+    const gotName=req.params.name;
+    decor.forEach(i => {
+        if(i.dev_name===gotName){
+            res.render("decorPage",{decorProductDetails:i});
+       }
+    });
+
+    //res.render("decorPage");
+});
+
 
 app.listen(3000,function(){
     console.log("Server is working in port 3000");
