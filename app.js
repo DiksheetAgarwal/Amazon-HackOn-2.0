@@ -37,6 +37,9 @@ app.get("/decor_product/:name",function(req,res){
     //res.render("decorPage");
 });
 
+app.get("/decor_ar/", function(req, res){
+    res.render("decor-AR")
+})
 
 app.listen(3000,function(){
     console.log("Server is working in port 3000");
