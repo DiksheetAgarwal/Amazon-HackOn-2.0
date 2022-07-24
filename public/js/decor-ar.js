@@ -95,10 +95,10 @@
       this.xrSession.addEventListener("select", this.onSelect);
     }
   
-    /** Place a sunflower when the screen is tapped. */
+    /** Place a 3D AR Model when the screen is tapped. */
     onSelect = () => {
-      if (window.sunflower) {
-        const clone = window.sunflower.clone();
+      if (window.ar_model) {
+        const clone = window.ar_model.clone();
         clone.position.copy(this.reticle.position);
         this.scene.add(clone)
   
@@ -189,9 +189,3 @@
   
   window.app = new App();
 
-
-
-
-
-  ////////////////////////////////////////////////////////////////////////////////
-  

@@ -37,8 +37,9 @@ app.get("/decor_product/:name",function(req,res){
     //res.render("decorPage");
 });
 
-app.get("/decor_ar/", function(req, res){
-    res.render("decor-AR")
+app.get("/decor_ar/:model_name", function(req, res){
+    const model_name=req.params.model_name;
+    res.render("decor-AR", {model_name:model_name});
 })
 
 app.listen(3000,function(){
