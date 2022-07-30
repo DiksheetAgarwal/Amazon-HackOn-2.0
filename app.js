@@ -46,6 +46,10 @@ app.get("/avatar_create",function(req,res){
     res.render("create-avatar");
 });
 
+app.get("/avatar_render",function(req,res){
+    res.render("avatar-render");
+});
+
 app.listen(3000,function(){
     console.log("Server is working in port 3000");
 });
