@@ -34,11 +34,12 @@ class Reticle extends THREE.Object3D {
 
 // Model name:
 model_to_render = document.getElementById("model_name").innerHTML.trim();
-model_url = decor_models[model_to_render];
+model = decor_models[model_to_render];
+model_url = model["url"];
+model_scale = model["scale"];
 
 window.gltfLoader.load(model_url, function(gltf) {
-  // const flower = gltf.scene.children.find(c => c.name === 'sunflower')
-  // flower.castShadow = true;
+  gltf.scene.scale.set(model_scale, model_scale, model_scale);
   window.ar_model = gltf.scene;
 });
 
