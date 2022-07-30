@@ -40,7 +40,11 @@ app.get("/decor_product/:name",function(req,res){
 app.get("/decor_ar/:model_name", function(req, res){
     const model_name=req.params.model_name;
     res.render("decor-AR", {model_name:model_name});
-})
+});
+
+app.get("/avatar_create",function(req,res){
+    res.render("create-avatar");
+});
 
 app.listen(3000,function(){
     console.log("Server is working in port 3000");
