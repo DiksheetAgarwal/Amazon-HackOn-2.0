@@ -46,12 +46,9 @@ app.get("/avatar_create",function(req,res){
     res.render("create-avatar");
 });
 
-app.get("/avatar_render",function(req,res){
-    res.render("avatar-render");
-});
-
-app.get("/avatar_try",function(req,res){
-    res.render("try-on-avatar",{decor:decor});
+app.get("/avatar_render/:model_name",function(req,res){
+    const model_name=req.params.model_name;
+    res.render("avatar-render",{fashion:fashion,model_name:model_name});
 });
 
 app.listen(3000,function(){
