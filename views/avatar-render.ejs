@@ -57,7 +57,8 @@
 
       // get avatar_model_url from session storage
       let avatar_model_url = sessionStorage.getItem("avatar_url");
-      avatar_model_url = '/models/avatar.glb'
+    //   For debug on low internet connectivity, uncomment below line
+    //   avatar_model_url = '/models/avatar.glb'
 
       const planeGeometry = new THREE.PlaneGeometry(20, 20, 1, 32);
       const planeMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
@@ -91,7 +92,9 @@
 
       function animate() {
         requestAnimationFrame(animate);
-        glb_model_scene.rotation.y += 0.01;
+        if (glb_model_scene){
+            glb_model_scene.rotation.y += 0.01;
+        }
         renderer.render(scene, camera);
       }
       animate();
