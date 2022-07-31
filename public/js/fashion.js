@@ -12,7 +12,7 @@ const fashion = [
     {
         dev_name: "pant",
         name : "Casual Pant",
-        image : "/pant.jpg",
+        image : "/pant3.jpg",
         star : 4,
         cost_price : 1599,
         discount_price: 999,
