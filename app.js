@@ -50,6 +50,8 @@ app.get("/avatar_render/:model_name", function (req, res) {
   res.render("avatar-render", { fashion: fashion, model_name: model_name });
 });
 
-app.listen(3000, function () {
-  console.log("Server is working in port 3000");
+PORT = process.env.PORT || 3000;
+
+app.listen(PORT, function () {
+  console.log("Server is up");
 });
