@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <title>Avatar</title>
-    <!-- <style>
-      body {
-        margin: 0;
-      }
-    </style> -->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -52,6 +47,9 @@
      
         
   <script>
+      if(!sessionStorage.getItem("avatar_url")){
+        window.location.href = "/avatar_create"
+      }
       const scene = new THREE.Scene();
       scene.background = new THREE.Color(0xffffff);
 
