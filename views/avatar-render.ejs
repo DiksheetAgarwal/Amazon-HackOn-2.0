@@ -23,7 +23,7 @@
     <!-- three.js -->
     <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-    <nav class="navbar navabr-dark bg-dark">
+    <nav  class="navbar fixed-top navabr-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand"><img src="/logo.png" alt=""></a>
       </div>
@@ -33,15 +33,18 @@
     
     <% if (model_name==="your_avatar") { %>
       <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 1rem auto;">
-        <div style="position: fixed; bottom:40px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 3rem;"><b>Like it?</b>
+        <div style="position: absolute; bottom:40px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 3rem;"><b>Like it?</b>
         <a href="https://www.amazon.in/finds/ref=sxts_snps_0_0_b32c9d5b-c95b-49fa-9d45-1e1c68824c0f?pd_rd_w=fumWB&content-id=amzn1.sym.b32c9d5b-c95b-49fa-9d45-1e1c68824c0f:amzn1.sym.b32c9d5b-c95b-49fa-9d45-1e1c68824c0f&pf_rd_p=b32c9d5b-c95b-49fa-9d45-1e1c68824c0f&pf_rd_r=WYMRAVS1GWV02QKZV721&pd_rd_wg=ub0d3&pd_rd_r=eb4f68e7-9e7a-4d9a-a13d-5635480570f1&qid=1659259746"><button type="button" class="btn" style="background-color: orange; width: 100%; height: 4.5rem; font-size: 2rem; border: 1px solid black;"> Post it on #FoundItOnAmazon</button></a>
         </div>
     </div>
     <% } else{ %>
       <% for( let i = 0; i < fashion.length; i++ ) { %>
           <% if(model_name===fashion[i].dev_name){ %>
-              <div style="position: absolute; bottom: -300px; display: flex; justify-content: center; align-items: center;">
+              <div style="border-top: 1.5px solid black; box-shadow: 3px -8px 20px -7px rgba(0,0,0,0.75);
+              -webkit-box-shadow: 3px -8px 20px -7px rgba(0,0,0,0.75);
+              -moz-box-shadow: 3px -8px 20px -7px rgba(0,0,0,0.75); position: absolute; bottom: -300px; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <img style="margin: 1rem auto;" src="<%= fashion[i].image %>" alt="">
+                <h1><%= fashion[i].name %></h1>
               </div>
           <%}%>
       <% } %>
