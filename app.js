@@ -43,7 +43,7 @@ app.get("/decor_ar/:model_name", function(req, res){
 });
 
 app.get("/avatar_create",function(req,res){
-    res.render("create-avatar");
+    res.render("avatar-create");
 });
 
 app.get("/avatar_render/:model_name",function(req,res){
