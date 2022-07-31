@@ -50,6 +50,10 @@ app.get("/avatar_render",function(req,res){
     res.render("avatar-render");
 });
 
+app.get("/avatar_try",function(req,res){
+    res.render("try-on-avatar",{decor:decor});
+});
+
 app.listen(3000,function(){
     console.log("Server is working in port 3000");
 });
