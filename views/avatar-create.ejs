@@ -1,58 +1,79 @@
-<!doctype html>
+<!DOCTYPE html>
 
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Decor-XR</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
 
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/avatar_form.css">
-    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+      integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/avatar_form.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <!-- three.js -->
     <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
     <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
-
+    <style>
+      html,
+      body,
+      .frame {
+        width: 1080px;
+        height: 800px;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        padding: 20px;
+        font-size: 14px;
+        border: none;
+      }
+      .warning {
+        background-color: #df68a2;
+        padding: 3px;
+        border-radius: 5px;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navabr-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand"><img src="/logo.png" alt=""></a>
+        <a class="navbar-brand"><img src="/logo.png" alt="" /></a>
       </div>
     </nav>
-    <div class="form_container">
-      <h1>Create your Avatar</h1>
-      <div class="rules">
-        <ul>
-          <li>For Customization and creation click this link <a target="_blank" href="https://readyplayer.me/hub/">here</a></li>
-            <li>Select gender</li>
-            <img src="/ss1.png" alt="">
-            <li>Click your photo or upload your photo</li>
-            <img src="/ss2.png" alt="">
-          <li>You will get your avatar for customization.</li>
-          <li>After customization copy the link for your avatar</li>
-          <img src="/ss3.png" alt="">
-          <li>Paste the link copied below.</li>
-        </ul>
-      </div>
-      <div class="form_field">
-        <input id="avatar_url" type="url" placeholder="Paste your link here">
-        <div class="d-grid gap-2 ">
-            <button onclick="submit_avatar_url()" type="button" class="btn" style="background-color:orange;">Load</button>
-        </div>
-      </div>
+    <iframe
+      id="frame"
+      class="frame"
+      allow="camera *; microphone *; clipboard-write"
+    ></iframe>
 
-    </div>
+    <div id="avatar_url" style="display: none"></div>
 
-    
     <script src="/js/avatar-create.js"></script>
   </body>
 </html>
